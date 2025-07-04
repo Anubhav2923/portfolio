@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import PeekingButton from './PeekingButton';
+import AnimatedBackground from './AnimatedBackground';
 
 const Contact = () => {
   const sectionRef = useScrollAnimation();
@@ -215,15 +215,13 @@ const Contact = () => {
                 />
               </div>
 
-              <PeekingButton
-                onClick={handleSubmit}
-                peekEmoji="📧"
-                peekColor="from-green-400 to-blue-500"
-                className="w-full flex items-center justify-center space-x-2"
+              <button
+                type="submit"
+                className="w-full bg-gradient-to-r from-blue-600 to-purple-600 text-white py-3 px-6 rounded-lg font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center space-x-2"
               >
                 <Send size={20} />
                 <span>Send Message</span>
-              </PeekingButton>
+              </button>
             </form>
           </div>
         </div>
