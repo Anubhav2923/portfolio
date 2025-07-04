@@ -204,7 +204,7 @@ const Projects = () => {
 
         <div className="text-center scroll-reveal-up">
           <a
-            href="https://github.com/Anubhav2923?tab=repositories"
+            href=""
             className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
           >
             <Github size={20} />

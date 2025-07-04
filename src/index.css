@@ -140,6 +140,15 @@
     animation: orbitReverse 25s linear infinite;
   }
 
+  /* Peeking character animations */
+  .animate-blink {
+    animation: blink 3s ease-in-out infinite;
+  }
+  
+  .animate-wave-hand {
+    animation: waveHand 1s ease-in-out infinite;
+  }
+
   /* Scroll reveal animations */
   .scroll-reveal {
     opacity: 0;
@@ -495,6 +504,28 @@
   }
   100% {
     transform: rotate(0deg) translateX(200px) rotate(0deg);
+  }
+}
+
+/* Peeking character animations */
+@keyframes blink {
+  0%, 90%, 100% {
+    transform: scaleY(1);
+  }
+  95% {
+    transform: scaleY(0.1);
+  }
+}
+
+@keyframes waveHand {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-15deg);
+  }
+  75% {
+    transform: rotate(15deg);
   }
 }
 

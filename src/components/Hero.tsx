@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import React from "react";
 import { ChevronDown, Github, Linkedin, Mail } from "lucide-react";
+=======
+import React from 'react';
+import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
+import PeekingButton from './PeekingButton';
+>>>>>>> 69b1ebb188397bc239c326e479420144715d2e4c
 
 const Hero = () => {
   const scrollToAbout = () => {
@@ -82,6 +88,7 @@ const Hero = () => {
             Crafting digital experiences with modern technologies. Passionate
             about creating scalable solutions that make a difference.
           </p>
+<<<<<<< HEAD
 
           <div
             className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up"
@@ -104,9 +111,22 @@ const Hero = () => {
                   ?.scrollIntoView({ behavior: "smooth" })
               }
               className="border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300"
+=======
+          
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
+            <PeekingButton 
+              variant="primary"
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              View My Work
+            </PeekingButton>
+            <PeekingButton 
+              variant="secondary"
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+>>>>>>> 69b1ebb188397bc239c326e479420144715d2e4c
             >
               Get In Touch
-            </button>
+            </PeekingButton>
           </div>
 
           <div
