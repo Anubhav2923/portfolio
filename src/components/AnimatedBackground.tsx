@@ -1,5 +1,3 @@
-import React from 'react';
-
 interface AnimatedBackgroundProps {
   variant?: 'dots' | 'waves' | 'geometric' | 'particles' | 'grid';
   className?: string;

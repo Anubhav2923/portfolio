@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
 import LoadingScreen from './components/LoadingScreen';
 import Header from './components/Header';
@@ -53,8 +53,8 @@ function App() {
               const progressBar = item.querySelector('.skill-progress');
               if (progressBar) {
                 const width = progressBar.getAttribute('data-width');
-                progressBar.style.setProperty('--skill-width', `${width}%`);
-                progressBar.style.width = `${width}%`;
+                (progressBar as HTMLElement).style.setProperty('--skill-width', `${width}%`);
+                (progressBar as HTMLElement).style.width = `${width}%`;
               }
             }, index * 100);
           });

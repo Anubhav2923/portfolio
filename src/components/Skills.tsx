@@ -1,4 +1,3 @@
-import React from 'react';
 import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import AnimatedBackground from './AnimatedBackground';
 
@@ -75,7 +74,7 @@ const Skills = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" ref={skillsRef}>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8" ref={skillsRef as React.RefObject<HTMLDivElement | null>}>
           {skillCategories.map((category, categoryIndex) => (
             <div
               key={categoryIndex}

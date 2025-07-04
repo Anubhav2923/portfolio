@@ -1,5 +1,5 @@
-import React from 'react';
-import { Heart, Github, Linkedin, Twitter, Mail, MailIcon, Instagram } from 'lucide-react';
+
+import { Heart, Github, Linkedin, Mail, Instagram } from 'lucide-react';
 
 const Footer = () => {
   return (

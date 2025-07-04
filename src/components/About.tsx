@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Code, Coffee, Lightbulb, Rocket } from 'lucide-react';
 import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import AnimatedBackground from './AnimatedBackground';
@@ -58,7 +58,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" ref={highlightsRef}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6" ref={highlightsRef as React.RefObject<HTMLDivElement | null>}>
             {highlights.map((highlight, index) => (
               <div
                 key={index}

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
-import AnimatedBackground from './AnimatedBackground';
+
 
 const Contact = () => {
   const sectionRef = useScrollAnimation();
