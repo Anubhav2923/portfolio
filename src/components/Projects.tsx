@@ -2,6 +2,7 @@ import React from 'react';
 import { ExternalLink, Github, Eye } from 'lucide-react';
 import { useScrollAnimation, useStaggeredAnimation } from '../hooks/useScrollAnimation';
 import AnimatedBackground from './AnimatedBackground';
+import PeekingButton from './PeekingButton';
 
 const Projects = () => {
   const sectionRef = useScrollAnimation();
@@ -181,13 +182,13 @@ const Projects = () => {
         </div>
 
         <div className="text-center scroll-reveal-up">
-          <a
-            href="#"
-            className="inline-flex items-center space-x-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+          <PeekingButton 
+            variant="primary"
+            onClick={() => window.open('#', '_blank')}
           >
-            <Github size={20} />
-            <span>View All Projects on GitHub</span>
-          </a>
+            <Github size={20} className="mr-2" />
+            View All Projects on GitHub
+          </PeekingButton>
         </div>
       </div>
     </section>
