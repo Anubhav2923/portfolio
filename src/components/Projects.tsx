@@ -6,7 +6,7 @@ import {
 import AnimatedBackground from './AnimatedBackground';
 
 // ✅  Fixed: relative paths (no extra “.//”)
-import devConnect from '../assets/devconnect.png';
+import devConnect from '../assets/devConnect.png';
 import resumeBuilder from '../assets/resumeBuilder.png';
 import uzumakiStore from '../assets/uzumakiStore.png';
 import watchPokemon from '../assets/watchPokemon.png';
