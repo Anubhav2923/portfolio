@@ -10,34 +10,34 @@ const Skills = () => {
     {
       title: "Frontend",
       skills: [
-        { name: "React", level: 95, color: "bg-blue-500" },
-        { name: "TypeScript", level: 90, color: "bg-blue-600" },
-        { name: "Next.js", level: 88, color: "bg-gray-800" },
-        { name: "Tailwind CSS", level: 92, color: "bg-teal-500" },
-        { name: "React Native", level: 80, color: "bg-blue-400" },
-        { name: "JavaScript", level: 93, color: "bg-yellow-500" }
+        { name: "React", level: 75, color: "bg-blue-500" },
+        { name: "TypeScript", level: 60, color: "bg-blue-600" },
+        { name: "Next.js", level: 65, color: "bg-gray-800" },
+        { name: "Tailwind CSS", level: 80, color: "bg-teal-500" },
+        { name: "React Native", level: 50, color: "bg-blue-400" },
+        { name: "JavaScript", level: 80, color: "bg-yellow-500" }
       ]
     },
     {
       title: "Backend",
       skills: [
-        { name: "Node.js", level: 92, color: "bg-green-600" },
-        { name: "Python", level: 88, color: "bg-yellow-500" },
-        { name: "Express.js", level: 90, color: "bg-gray-700" },
+        { name: "Node.js", level: 82, color: "bg-green-600" },
+        { name: "Python", level: 70, color: "bg-yellow-500" },
+        { name: "Express.js", level: 80, color: "bg-gray-700" },
         { name: "FastAPI", level: 82, color: "bg-teal-600" },
-        { name: "GraphQL", level: 78, color: "bg-pink-500" },
-        { name: "REST APIs", level: 90, color: "bg-blue-600" }
+        { name: "GraphQL", level: 68, color: "bg-pink-500" },
+        { name: "REST APIs", level: 80, color: "bg-blue-600" }
       ]
     },
     {
       title: "Database",
       skills: [
-        { name: "PostgreSQL", level: 90, color: "bg-blue-700" },
+        { name: "PostgreSQL", level: 60, color: "bg-blue-700" },
         { name: "MongoDB", level: 88, color: "bg-green-500" },
-        { name: "Redis", level: 85, color: "bg-red-500" },
-        { name: "MySQL", level: 87, color: "bg-blue-600" },
-        { name: "Firebase", level: 80, color: "bg-orange-500" },
-        { name: "Supabase", level: 85, color: "bg-emerald-500" }
+        { name: "Redis", level: 70, color: "bg-red-500" },
+        { name: "MySQL", level: 60, color: "bg-blue-600" },
+        { name: "Firebase", level: 70, color: "bg-orange-500" },
+        { name: "Supabase", level: 60, color: "bg-emerald-500" }
       ]
     },
     {
@@ -93,7 +93,7 @@ const Skills = () => {
                       <div
                         className={`h-full rounded-full ${skill.color} skill-progress transition-all duration-1000 ease-out relative`}
                         data-width={skill.level}
-                        style={{ width: '0%' }}
+                        style={{ width: skill.level+ "%" }}
                       >
                         <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
                       </div>

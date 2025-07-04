@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Github, Linkedin, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Send, Github, Linkedin, Instagram } from 'lucide-react';
 import { useScrollAnimation } from '../hooks/useScrollAnimation';
 import AnimatedBackground from './AnimatedBackground';
 
@@ -98,7 +98,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200">Email</h4>
-                  <p className="text-gray-600 dark:text-gray-400">hello@developer.com</p>
+                  <p className="text-gray-600 dark:text-gray-400">anubhavsinghas9@gmail.com</p>
                 </div>
               </div>
 
@@ -108,7 +108,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200">Phone</h4>
-                  <p className="text-gray-600 dark:text-gray-400">+1 (555) 123-4567</p>
+                  <p className="text-gray-600 dark:text-gray-400">+91 9893936367</p>
                 </div>
               </div>
 
@@ -118,7 +118,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-semibold text-gray-800 dark:text-gray-200">Location</h4>
-                  <p className="text-gray-600 dark:text-gray-400">San Francisco, CA</p>
+                  <p className="text-gray-600 dark:text-gray-400">Bhilai Chattisgarh</p>
                 </div>
               </div>
             </div>
@@ -126,23 +126,23 @@ const Contact = () => {
             <div className="pt-8 scroll-reveal-up">
               <h4 className="font-semibold text-gray-800 dark:text-gray-200 mb-4">Follow Me</h4>
               <div className="flex space-x-4">
-                <a
-                  href="#"
+                <a target='_blank'
+                  href="https://github.com/Anubhav2923"
                   className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-gray-800 hover:text-white dark:hover:bg-gray-600 transition-all duration-300 transform hover:scale-110 border border-white/20 dark:border-gray-700/50"
                 >
                   <Github size={20} />
                 </a>
-                <a
-                  href="#"
+                <a target='_blank'
+                  href="https://www.linkedin.com/in/anubhav-singh-90b02828a/"
                   className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 transform hover:scale-110 border border-white/20 dark:border-gray-700/50"
                 >
                   <Linkedin size={20} />
                 </a>
-                <a
+                <a target='_blank'
                   href="#"
-                  className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-blue-400 hover:text-white transition-all duration-300 transform hover:scale-110 border border-white/20 dark:border-gray-700/50"
+                  className="w-12 h-12 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-full flex items-center justify-center hover:bg-red-400 hover:text-white transition-all duration-300 transform hover:scale-110 border border-white/20 dark:border-gray-700/50"
                 >
-                  <Twitter size={20} />
+                  <Instagram size={20} />
                 </a>
               </div>
             </div>

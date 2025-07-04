@@ -18,7 +18,7 @@ const LoadingScreen = () => {
             <Code2 size={40} className="text-white" />
           </div>
           <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent animate-fade-in-up">
-            Anubhav Singh
+            ANUBHAV SINGH
           </h1>
           <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">Full Stack Developer</p>
         </div>

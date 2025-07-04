@@ -52,11 +52,6 @@ const About = () => {
               focused on building scalable, user-friendly applications.
             </p>
             <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-              I specialize in modern web technologies, working across the entire development stack from 
-              database design to user interface implementation. I believe in writing clean, maintainable code 
-              and creating seamless user experiences.
-            </p>
-            <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
               When I'm not coding, you'll find me exploring new technologies, contributing to open source projects, 
               or mentoring fellow developers. I'm always excited to take on new challenges and collaborate on 
               innovative projects.
@@ -78,7 +73,11 @@ const About = () => {
         </div>
 
         <div className="mt-16 text-center scroll-reveal-up">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center transform hover:scale-105 transition-transform duration-300">
+              <div className="text-3xl font-bold text-red-600 dark:text-orange-400 mb-2 counter-animation">5+</div>
+              <div className="text-gray-600 dark:text-gray-400">Projects Completed</div>
+            </div>
             <div className="text-center transform hover:scale-105 transition-transform duration-300">
               <div className="text-3xl font-bold text-purple-600 dark:text-purple-400 mb-2 counter-animation">1+</div>
               <div className="text-gray-600 dark:text-gray-400">Years Experience</div>
