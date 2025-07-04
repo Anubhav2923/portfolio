@@ -214,6 +214,15 @@
     opacity: 1;
     transform: translateX(0);
   }
+
+  /* Peeking button animations */
+  .peek-element {
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+  
+  .peek-bounce {
+    animation: peekBounce 0.6s ease-out;
+  }
   
   /* Utility classes */
   .line-clamp-2 {
@@ -241,6 +250,19 @@
       linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
       linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
     background-size: 30px 30px;
+  }
+
+  /* Mouse interaction effects */
+  .mouse-parallax {
+    transition: transform 0.3s ease-out;
+  }
+  
+  .mouse-parallax-slow {
+    transition: transform 0.5s ease-out;
+  }
+  
+  .mouse-parallax-very-slow {
+    transition: transform 0.7s ease-out;
   }
 }
 
@@ -498,6 +520,19 @@
   }
 }
 
+/* Peeking animation */
+@keyframes peekBounce {
+  0% {
+    transform: scale(0) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
@@ -580,5 +615,11 @@ button {
   .scroll-reveal-up {
     opacity: 1 !important;
     transform: none !important;
+  }
+
+  .mouse-parallax,
+  .mouse-parallax-slow,
+  .mouse-parallax-very-slow {
+    transition: none !important;
   }
 }

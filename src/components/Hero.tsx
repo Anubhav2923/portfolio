@@ -1,7 +1,20 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { ChevronDown, Github, Linkedin, Mail } from 'lucide-react';
 
 const Hero = () => {
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      const x = (e.clientX / window.innerWidth - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      setMousePosition({ x, y });
+    };
+
+    window.addEventListener('mousemove', handleMouseMove);
+    return () => window.removeEventListener('mousemove', handleMouseMove);
+  }, []);
+
   const scrollToAbout = () => {
     const element = document.getElementById('about');
     if (element) {
@@ -16,20 +29,70 @@ const Hero = () => {
         <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width=%2260%22 height=%2260%22 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%234f46e5%22 fill-opacity=%220.05%22%3E%3Ccircle cx=%2230%22 cy=%2230%22 r=%222%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-50"></div>
       </div>
 
-      {/* Enhanced Floating Elements */}
-      <div className="absolute top-20 left-20 w-20 h-20 bg-blue-500/10 dark:bg-blue-400/20 rounded-full animate-float"></div>
-      <div className="absolute top-40 right-32 w-16 h-16 bg-purple-500/10 dark:bg-purple-400/20 rounded-full animate-float-delayed"></div>
-      <div className="absolute bottom-40 left-32 w-24 h-24 bg-pink-500/10 dark:bg-pink-400/20 rounded-full animate-float-slow"></div>
+      {/* Mouse-following Enhanced Floating Elements */}
+      <div 
+        className="absolute top-20 left-20 w-20 h-20 bg-blue-500/10 dark:bg-blue-400/20 rounded-full animate-float transition-transform duration-300 ease-out"
+        style={{
+          transform: `translate(${mousePosition.x * 20}px, ${mousePosition.y * 15}px)`
+        }}
+      ></div>
+      <div 
+        className="absolute top-40 right-32 w-16 h-16 bg-purple-500/10 dark:bg-purple-400/20 rounded-full animate-float-delayed transition-transform duration-500 ease-out"
+        style={{
+          transform: `translate(${mousePosition.x * -15}px, ${mousePosition.y * 20}px)`
+        }}
+      ></div>
+      <div 
+        className="absolute bottom-40 left-32 w-24 h-24 bg-pink-500/10 dark:bg-pink-400/20 rounded-full animate-float-slow transition-transform duration-700 ease-out"
+        style={{
+          transform: `translate(${mousePosition.x * 25}px, ${mousePosition.y * -10}px)`
+        }}
+      ></div>
       
-      {/* Additional Animated Shapes */}
-      <div className="absolute top-32 left-1/2 w-12 h-12 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-lg animate-geometric-float" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute bottom-32 right-20 w-18 h-18 bg-gradient-to-r from-purple-400/20 to-pink-500/20 transform rotate-45 animate-geometric-float" style={{ animationDelay: '2s' }}></div>
-      <div className="absolute top-1/2 left-16 w-8 h-8 bg-gradient-to-r from-green-400/20 to-emerald-500/20 rounded-full animate-pulse-slow" style={{ animationDelay: '0.5s' }}></div>
-      <div className="absolute top-1/4 right-1/4 w-14 h-14 bg-gradient-to-r from-orange-400/20 to-red-500/20 rounded-lg animate-bounce-gentle" style={{ animationDelay: '1.5s' }}></div>
-      <div className="absolute bottom-1/4 left-1/4 w-10 h-10 bg-gradient-to-r from-indigo-400/20 to-purple-500/20 transform rotate-12 animate-float" style={{ animationDelay: '3s' }}></div>
+      {/* Additional Mouse-following Animated Shapes */}
+      <div 
+        className="absolute top-32 left-1/2 w-12 h-12 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-lg animate-geometric-float transition-transform duration-400 ease-out" 
+        style={{ 
+          animationDelay: '1s',
+          transform: `translate(${mousePosition.x * -10}px, ${mousePosition.y * 12}px)`
+        }}
+      ></div>
+      <div 
+        className="absolute bottom-32 right-20 w-18 h-18 bg-gradient-to-r from-purple-400/20 to-pink-500/20 transform rotate-45 animate-geometric-float transition-transform duration-600 ease-out" 
+        style={{ 
+          animationDelay: '2s',
+          transform: `rotate(45deg) translate(${mousePosition.x * 18}px, ${mousePosition.y * -8}px)`
+        }}
+      ></div>
+      <div 
+        className="absolute top-1/2 left-16 w-8 h-8 bg-gradient-to-r from-green-400/20 to-emerald-500/20 rounded-full animate-pulse-slow transition-transform duration-300 ease-out" 
+        style={{ 
+          animationDelay: '0.5s',
+          transform: `translate(${mousePosition.x * 12}px, ${mousePosition.y * 18}px)`
+        }}
+      ></div>
+      <div 
+        className="absolute top-1/4 right-1/4 w-14 h-14 bg-gradient-to-r from-orange-400/20 to-red-500/20 rounded-lg animate-bounce-gentle transition-transform duration-500 ease-out" 
+        style={{ 
+          animationDelay: '1.5s',
+          transform: `translate(${mousePosition.x * -12}px, ${mousePosition.y * 15}px)`
+        }}
+      ></div>
+      <div 
+        className="absolute bottom-1/4 left-1/4 w-10 h-10 bg-gradient-to-r from-indigo-400/20 to-purple-500/20 transform rotate-12 animate-float transition-transform duration-400 ease-out" 
+        style={{ 
+          animationDelay: '3s',
+          transform: `rotate(12deg) translate(${mousePosition.x * 16}px, ${mousePosition.y * -12}px)`
+        }}
+      ></div>
       
-      {/* Orbiting Elements */}
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+      {/* Orbiting Elements with Mouse Interaction */}
+      <div 
+        className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 ease-out"
+        style={{
+          transform: `translate(calc(-50% + ${mousePosition.x * 10}px), calc(-50% + ${mousePosition.y * 8}px))`
+        }}
+      >
         <div className="relative w-96 h-96">
           <div className="absolute top-0 left-1/2 w-6 h-6 bg-blue-400/30 rounded-full animate-orbit-slow transform -translate-x-1/2"></div>
           <div className="absolute top-1/2 right-0 w-4 h-4 bg-purple-400/30 rounded-full animate-orbit-medium transform -translate-y-1/2"></div>
@@ -38,16 +101,17 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Floating Particles */}
+      {/* Mouse-following Floating Particles */}
       {[...Array(15)].map((_, i) => (
         <div
           key={i}
-          className="absolute w-2 h-2 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full animate-particle-float"
+          className="absolute w-2 h-2 bg-gradient-to-r from-blue-400/20 to-purple-400/20 rounded-full animate-particle-float transition-transform duration-300 ease-out"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
             animationDelay: `${Math.random() * 10}s`,
             animationDuration: `${15 + Math.random() * 10}s`,
+            transform: `translate(${mousePosition.x * (5 + Math.random() * 10)}px, ${mousePosition.y * (5 + Math.random() * 10)}px)`
           }}
         />
       ))}
@@ -65,15 +129,27 @@ const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12 animate-fade-in-up" style={{ animationDelay: '0.4s' }}>
             <button 
               onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
-              className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-pulse-slow"
+              className="group relative bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 animate-pulse-slow overflow-hidden"
             >
-              View My Work
+              <span className="relative z-10">View My Work</span>
+              {/* Peeking Image */}
+              <div className="absolute -right-8 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 group-hover:-right-2 transition-all duration-500 ease-out">
+                <div className="w-full h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-lg">👀</span>
+                </div>
+              </div>
             </button>
             <button 
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-              className="border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300"
+              className="group relative border-2 border-blue-600 dark:border-blue-400 text-blue-600 dark:text-blue-400 px-8 py-3 rounded-full font-semibold hover:bg-blue-600 hover:text-white dark:hover:bg-blue-400 dark:hover:text-gray-900 transition-all duration-300 overflow-hidden"
             >
-              Get In Touch
+              <span className="relative z-10">Get In Touch</span>
+              {/* Peeking Image */}
+              <div className="absolute -left-8 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-white/20 rounded-full opacity-0 group-hover:opacity-100 group-hover:-left-2 transition-all duration-500 ease-out">
+                <div className="w-full h-full bg-gradient-to-r from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                  <span className="text-white text-lg">👋</span>
+                </div>
+              </div>
             </button>
           </div>
 
