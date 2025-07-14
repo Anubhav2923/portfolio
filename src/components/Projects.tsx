@@ -10,17 +10,24 @@ import devConnect from '../assets/devConnect.png';
 import resumeBuilder from '../assets/resumeBuilder.png';
 import uzumakiStore from '../assets/uzumakiStore.png';
 import watchPokemon from '../assets/watchPokemon.png';
+import myndshift from '../assets/myndshift.png';
 
 const Projects = () => {
   const sectionRef   = useScrollAnimation();
   const featuredRef  = useStaggeredAnimation(300);
   const otherRef     = useStaggeredAnimation(150);
 
-  // ——————————————————————————————————————————————————
-  // ⚠️  NOTE: add or remove properties freely—anchors
-  //           below render only when a value exists.
-  // ——————————————————————————————————————————————————
   const projects = [
+     {
+      title: 'Myndshift Therapy',
+      description:
+        'Interactive web app that lets users build customised resumes with live preview and multiple templates.',
+      technologies: ['React', 'Node.js', 'Tailwind CSS','Express.js', 'MongoDB', 'JavaScript'],
+      image: myndshift,
+      demo: 'https://myndshift-therapy.vercel.app/',
+      github: 'https://github.com/Anubhav2923/Myndshift_Therapy', 
+      featured: true,
+    },
     {
       title: 'Resume Simplified',
       description:
@@ -28,8 +35,8 @@ const Projects = () => {
       technologies: ['React', 'Node.js', 'Tailwind CSS'],
       image: resumeBuilder,
       demo: 'https://resumesimplified.netlify.app/',
-      github: 'https://github.com/Anubhav2923/resume-simplified', // <— added
-      featured: true,
+      github: 'https://github.com/Anubhav2923/resume-simplified', 
+      featured: false,
     },
     {
       title: 'DevConnect',
